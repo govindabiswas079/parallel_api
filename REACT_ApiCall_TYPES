@@ -1,0 +1,150 @@
+// import axios from 'axios';
+import http from 'http';
+// import unirest from 'unirest';
+// import request from 'request';
+
+
+
+// USING HTTP NPM PAKAGE 
+/*
+    const onSubmit = async e => {
+        e.preventDefault();
+        var options = {
+            method: 'POST',
+            hostname: 'localhost',
+            port: 8080,
+            path: '/event/add',
+            cache: 'no-cache',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8',
+                'Access-Control-Allow-Origin': '*',
+                'Accept': 'application/json',
+                'Access-Control-Allow-Credentials': true
+            },
+            maxRedirects: 20
+        };
+
+        var req = await http.request(options, function (res) {
+            var chunks = [];
+
+            res.on("data", function (chunk) {
+                chunks.push(chunk);
+            });
+
+            res.on("end", function (chunk) {
+                var body = Buffer.concat(chunks);
+                console.log(body.toString());
+            });
+
+            res.on("error", function (error) {
+                console.error(error);
+            });
+        });
+
+        var sendData = JSON.stringify({
+            eventTitle: users.eventTitle,
+            eventDescription: users.eventDescription,
+            startDate: users.startDate,
+            endDate: users.endDate,
+            avenue: users.avenue,
+            maxMembers: users.maxMembers
+        });
+
+        req.write(sendData);
+        req.end();
+        history.push('/');
+    }
+*/
+
+
+
+
+// USING AXIOS NPM PAKAGE
+/* var data = JSON.stringify({
+        eventTitle: eventTitle,
+        eventDescription: eventDescription,
+        startDate: startDate,
+        endDate: endDate,
+        avenue: avenue,
+        maxMembers: maxMembers
+    });
+
+    var config = {
+        method: 'post',
+        url: 'http://localhost:8080/event/add',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: data
+    };
+
+    const onSubmit = async e => {
+        e.preventDefault();
+        await axios(config)
+            .then(function (response) {
+                //console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        history.push('/');
+    } */
+
+
+
+// USING UNIREST NPM PAKAGE
+/*
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        await unirest('POST', 'http://localhost:8080/event/add')
+            .headers({
+                'Content-Type': 'application/json'
+            })
+            .send(JSON.stringify({
+                eventTitle: eventTitle,
+                eventDescription: eventDescription,
+                startDate: startDate,
+                endDate: endDate,
+                avenue: avenue,
+                maxMembers: maxMembers,
+            }))
+            .end(function (res) {
+                if (res.error) throw new Error(res.error);
+                console.log(res.raw_body);
+            });
+        history.push('/');
+    }
+*/
+
+
+
+
+
+// USING REQUEST NPM PAKAGE
+
+/* const onSubmit = async (event) => {
+    event.preventDefault();
+
+    var options = {
+        method: 'POST',
+        url: 'http://localhost:8080/event/add',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            eventTitle: eventTitle,
+            eventDescription: eventDescription,
+            startDate: startDate,
+            endDate: endDate,
+            avenue: avenue,
+            maxMembers: maxMembers,
+        })
+
+    };
+    await request(options, function (error, response) {
+        if (error) throw new Error(error);
+        console.log(response.body);
+    });
+    history.push('/');
+} */
